@@ -1,2 +1,2 @@
-# ebookstore_prototype
-User Interface Analysis and Design
+# JT&LB (E-Bookstore Website)
+## User Interface Analysis and Design
