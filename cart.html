@@ -10,6 +10,7 @@
         <script src="js/ga.js"></script>
         <script src="js/docs.js"></script>
         <script src="js/prettify/run_prettify.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
 
         <script>
         $(function(){
@@ -24,207 +25,98 @@
         <div id="header"></div>
 
         <!-- PAGE CONTAINER -->
-        <div class="container">
+        <div class="container" style="min-height:450px">
 
+            <div class="panel" style="margin-top:50px">
+                <div class="heading">
+                    <span class="icon mif-cart"></span>
+                    <span class="title">Panel Title</span>
+                </div>
+                <div class="content" style="background-color:transparent">
+                    <table class="dataTable border bordered no-footer" data-role="datatable" id="cartTable" role="grid">
+                <thead>
+                    <tr>
+                        <td style="width:200px;">
+                            NAME
+                        </td>
+                        <td style="width:200px;">
+                            AUTHOR
+                        </td>
+                        <td style="width:200px;">
+                            PRICE
+                        </td>
+                        <td style="width:200px;">
+                            QUANTITY
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr role="row" class="odd">
+                        <td>
+                            The Martian: A Novel
+                        </td>
+                        <td>
+                            Andy Weir
+                        </td>
+                        <td>
+                            $13.00 USD
+                        </td>
+                        <td>
+                            <button class="button minus" style="width:30px; padding:0;"><span class="mif-minus"></span></button>
+                            <span>1</span>
+                            <button class="button plus" style="width:30px; padding:0;"><span class="mif-plus"></span></button>
+                        </td>         
+                    </tr>
+                    <tr role="row" class="odd">
+                        <td>
+                            Tom Clancy Under Fire
+                        </td>
+                        <td>
+                            Grant Blackwood
+                        </td>
+                        <td>
+                            $22.70 USD
+                        </td>
+                        <td>
+                            <button class="button minus" style="width:30px; padding:0;"><span class="mif-minus"></span></button>
+                            <span>1</span>
+                            <button class="button plus" style="width:30px; padding:0;"><span class="mif-plus"></span></button>
+                        </td>         
+                    </tr>
 
-            <div class="main-content clear-float">
-
-                <div class="panel" style="margin-top: 30px;">
-                    <div class="heading">
-                        <span class="title">Choose a category</span>
-                    </div>
-                    <div class="content">
-                       <div class="listview">
-                        <a class="list politicLink">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">POLITIC</span>
-                        </a>
-                        <a class="list historyLink">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">HISTORY</span>
-                        </a>
-                        <a class="list fictionLink" href="#">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">FICTION</span>
-                        </a>
-                    </div>
+                    </tbody>
+                    </table>
                 </div>
             </div>
+                    <div class="grid" style="margin-top:30px">
+                    <div class="row cells12">
+                        <div class="cell offset9 colspan3">
+                            <button type="submit" class="button primary checkout" formaction><span>Proceed to checkout</span></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                </div>
 
 
 
-
-<div 
-        <!-- Politique -->
-        <div style="margin-top: 30px;" id="politicLink">
-            <h3 class="fg-orange text-light margin5">POLITIC <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-            <div class="tile-group no-margin no-padding" style="width: 100%; margin-bottom: 30px !important;">
-
-                <!-- BOOK 1 -->
-                <a href="B_ID=1.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/tc_uf.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 2 -->
-                <a href="B_ID=2.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/jp&hr_tod.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 3 -->
-                <a href="B_ID=3.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/nr_ftf.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 4 -->
-                <a href="B_ID=4.html">
-                    <div class="tile fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/aa_mr.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 5 -->
-                <a href="B_ID=5.html">
-                    <div class="tile fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/sk_fk.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
+                <!-- FOOTER -->
+                <div id="footer"></div>
             </div>
-        </div>
-    </div>
 
-
-
-
-        <!-- Histoire -->
-        <div  id="historyLink">
-        <h3 class="fg-blue text-light margin5" >HISTORY <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-        <div class="tile-group no-margin no-padding" style="width: 100%;  margin-bottom: 30px !important;">
-            <!-- BOOK 1 -->
-            <a href="B_ID=6.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/aw_tm.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 2 -->
-            <a href="B_ID=7.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/ek_tsgy.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 3 -->
-            <a href="B_ID=8.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/hl_tkam.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 4 -->
-            <a href="B_ID=9.html">
-                <div class="tile fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/jb_swja.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 5 -->
-            <a href="B_ID=10.html">
-                <div class="tile fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/thc_btwam.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </div>
-
-        <!-- Fiction -->
-        <div id="fictionLink"> 
-        <h3 class="fg-green text-light margin5" >FICTION <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-        <div class="tile-group no-margin no-padding" style="width: 100%;  margin-bottom: 30px !important;">
-            <!-- BOOK 11 -->
-            <a href="B_ID=11.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/sales/dmr_ooc.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 12 -->
-            <a href="B_ID=12.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/sales/lf_bevc.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <a href="B_ID=13.html">
-             <!-- BOOK 13 -->
-             <div class="tile-large fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/osc_osc.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-        <!-- BOOK 14 -->
-        <a href="B_ID=14.html">
-            <div class="tile fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/sd_tka.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-        <!-- BOOK 15 -->
-        <a href="B_ID=15.html">
-            <div class="tile fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/tb.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-
-
-
-    <!-- FOOTER -->
-    <div id="footer"></div>
-</div>
-
-<script type="text/javascript">
-$(".politicLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#politicLink").offset().top},
-        'slow');           
-});
-$(".historyLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#historyLink").offset().top},
-        'slow');           
-});
-$(".fictionLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#fictionLink").offset().top},
-        'slow');           
-});
-</script>
-
-</body>
-</html> 
+        </body>
+        <script type="text/javascript">
+        $(".minus").click(function(e) { 
+            if(parseInt(e.currentTarget.nextElementSibling.textContent) >= 1){
+                e.currentTarget.nextElementSibling.textContent = parseInt(e.currentTarget.nextElementSibling.textContent) - 1;
+            }
+        });
+        $(".plus").click(function(e) { 
+            e.currentTarget.previousElementSibling.textContent = parseInt(e.currentTarget.previousElementSibling.textContent) + 1;
+        });
+        $(".checkout").click(function(e) { 
+            window.location.replace("checkout.html");
+        });
+        </script>
+        </html> 
