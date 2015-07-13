@@ -26,205 +26,134 @@
         <!-- PAGE CONTAINER -->
         <div class="container">
 
+            <h3 class="fg-magenta text-light" style="margin-top: 30px;">CHECKOUT <span class="mif-user-check mif-2x" style="vertical-align: top !important;"></span></h3>
+            
 
-            <div class="main-content clear-float">
+            <form action="index.html" data-role="validator" data-show-required-state="false" data-hint-mode="line" data-hint-background="bg-red" data-hint-color="fg-white" data-hide-error="5000">
+                <div class="grid">
+                    <div class="row">
+                        <div class="cell" style="width:50%;">
+                            <h4 class="text-light">General Information</h4>
+                            <hr class="thin"/>
+                            <label>First Name</label>
+                            <div class="input-control text full-size" data-role="input">
+                                <input type="text" data-validate-func="required" placeholder="First Name" data-validate-hint="This field can not be empty">
+                                <span class="input-state-error mif-warning"></span>
+                                <span class="input-state-success mif-checkmark"></span>
+                            </div>
 
-                <div class="panel" style="margin-top: 30px;">
-                    <div class="heading">
-                        <span class="title">Choose a category</span>
+                            <label>Last Name</label>
+                            <div class="input-control text full-size" data-role="input">
+                                <input type="text" data-validate-func="required" placeholder="Last Name" data-validate-hint="This field can not be empty">
+                                <span class="input-state-error mif-warning"></span>
+                                <span class="input-state-success mif-checkmark"></span>
+                            </div>
+
+                            <label>Email Address</label>
+                            <div class="input-control text full-size" data-role="input">
+                                <input type="text" data-validate-func="email" placeholder="Email Address" data-validate-hint="Not valid email address">
+                                <span class="input-state-error mif-warning"></span>
+                                <span class="input-state-success mif-checkmark"></span>
+                            </div>
+                            <h4 class="text-light">Billing/Shipping Information</h4>
+                            <hr class="thin"/>
+
+
+                            <label>Street Address</label>
+                            <div class="input-control text full-size" data-role="input">
+                                <input type="text" data-validate-func="required" placeholder="123 Example Street" data-validate-hint="This field can not be empty">
+                                <span class="input-state-error mif-warning"></span>
+                                <span class="input-state-success mif-checkmark"></span>
+                            </div>
+
+                            <label>Postal Code</label>
+                            <div class="input-control text full-size" data-role="input">
+                                <input type="text" data-validate-func="pattern" placeholder="X1X 1X1" data-validate-arg="^([a-zA-Z]\d[a-zA-Z]( )?\d[a-zA-Z]\d)$" data-validate-hint="Value must a postal code">
+
+                                <span class="input-state-error mif-warning"></span>
+                                <span class="input-state-success mif-checkmark"></span>
+                            </div>
+
+                            <label>Province </label><br>
+                            <div class="input-control select">
+                               <select>
+                                <option value="ON">Ontario</option>
+                                <option value="QC">Quebec</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="NB">New Brunswick</option>
+                                <option value="MN">Manitoba</option>
+                                <option value="MN">British Columbia</option>
+                                <option value="MN">Prince Edward Island</option>
+                                <option value="MN">Saskatchewan</option>
+                                <option value="WA">Alberta</option>
+                                <option value="WA">Newfoundland and Labrador</option>
+                            </select>
+                        </div>
+
+                        <h4 class="text-light">Delivery Options</h4>
+                        <hr class="thin"/>
+                        <label class="input-control radio">
+                            <input type="radio" name="n1" checked>
+                            <span class="check"></span>
+                            <span class="caption">Delivery</span>
+                        </label>
+                        <label class="input-control radio">
+                            <input type="radio" name="n1">
+                            <span class="check"></span>
+                            <span class="caption">Pick up in store</span>
+                        </label>
+
+
+                        <h4 class="text-light">Payment Information</h4>
+                        <hr class="thin"/>
+
+                        <label>Method of payment : </label><br>
+                        <div class="input-control select" id="selection_card">
+                           <select>
+                            <option value="VISA">VISA</option>
+                            <option value="MASTERCARD">MasterCard</option>
+
+                        </select>
                     </div>
-                    <div class="content">
-                       <div class="listview">
-                        <a class="list politicLink">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">POLITIC</span>
-                        </a>
-                        <a class="list historyLink">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">HISTORY</span>
-                        </a>
-                        <a class="list fictionLink" href="#">
-                            <span class="list-icon icon-font-icon"></span>
-                            <span class="list-title">FICTION</span>
-                        </a>
+
+                    <br><label>Card owner's full name</label><br>
+                    <div class="input-control text full-size" data-role="input">
+                        <input id="cofn" type="text" data-validate-func="required" placeholder="First Name" data-validate-hint="This field can not be empty">
+                        <span class="input-state-error mif-warning"></span>
+                        <span class="input-state-success mif-checkmark"></span>
                     </div>
+
+                    <br><label>Card Number</label><br>
+                    <div class="input-control text full-size" data-role="input">
+                        <input type="text" data-validate-func="pattern" placeholder="Card Number" data-validate-arg="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" data-validate-hint="Value must be a valid card number">
+
+                        <span class="input-state-error mif-warning"></span>
+                        <span class="input-state-success mif-checkmark"></span>
+                    </div>
+
+                    <br><label>Verification Number</label><br>
+                    <div class="input-control text full-size" data-role="input">
+                        <input type="text" data-validate-func="minlength" placeholder="123" data-validate-arg="3" data-validate-hint="Validation code must be a least 3 numbers">
+                        <span class="input-state-error mif-warning"></span>
+                        <span class="input-state-success mif-checkmark"></span>
+                    </div>
+
                 </div>
-            </div>
 
-
-
-
-<div 
-        <!-- Politique -->
-        <div style="margin-top: 30px;" id="politicLink">
-            <h3 class="fg-orange text-light margin5">POLITIC <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-            <div class="tile-group no-margin no-padding" style="width: 100%; margin-bottom: 30px !important;">
-
-                <!-- BOOK 1 -->
-                <a href="B_ID=1.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/tc_uf.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 2 -->
-                <a href="B_ID=2.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/jp&hr_tod.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 3 -->
-                <a href="B_ID=3.html">
-                    <div class="tile-large fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/nr_ftf.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 4 -->
-                <a href="B_ID=4.html">
-                    <div class="tile fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/aa_mr.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
-                <!-- BOOK 5 -->
-                <a href="B_ID=5.html">
-                    <div class="tile fg-white" data-role="tile">
-                        <div class="tile-content">
-                            <img src="images/best_sellers/sk_fk.jpg" data-role="fitImage" data-format="fill">
-                        </div>
-                    </div>
-                </a>
             </div>
         </div>
-    </div>
-
-
-
-
-        <!-- Histoire -->
-        <div  id="historyLink">
-        <h3 class="fg-blue text-light margin5" >HISTORY <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-        <div class="tile-group no-margin no-padding" style="width: 100%;  margin-bottom: 30px !important;">
-            <!-- BOOK 1 -->
-            <a href="B_ID=6.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/aw_tm.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 2 -->
-            <a href="B_ID=7.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/ek_tsgy.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 3 -->
-            <a href="B_ID=8.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/hl_tkam.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 4 -->
-            <a href="B_ID=9.html">
-                <div class="tile fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/jb_swja.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 5 -->
-            <a href="B_ID=10.html">
-                <div class="tile fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/new_releases/thc_btwam.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-
+        <hr class="thin">
+        <div class="form-actions padding10 no-padding-left">
+            <button class="button primary" type="submit">Submit</button>
+            <button class="button link" type="button" onClick="javascript:window.location.href='cart.html'">Cancel</button>
         </div>
-    </div>
-
-        <!-- Fiction -->
-        <div id="fictionLink"> 
-        <h3 class="fg-green text-light margin5" >FICTION <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
-        <div class="tile-group no-margin no-padding" style="width: 100%;  margin-bottom: 30px !important;">
-            <!-- BOOK 11 -->
-            <a href="B_ID=11.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/sales/dmr_ooc.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <!-- BOOK 12 -->
-            <a href="B_ID=12.html">
-                <div class="tile-large fg-white" data-role="tile">
-                    <div class="tile-content">
-                        <img src="images/sales/lf_bevc.jpg" data-role="fitImage" data-format="fill">
-                    </div>
-                </div>
-            </a>
-            <a href="B_ID=13.html">
-             <!-- BOOK 13 -->
-             <div class="tile-large fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/osc_osc.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-        <!-- BOOK 14 -->
-        <a href="B_ID=14.html">
-            <div class="tile fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/sd_tka.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-        <!-- BOOK 15 -->
-        <a href="B_ID=15.html">
-            <div class="tile fg-white" data-role="tile">
-                <div class="tile-content">
-                    <img src="images/sales/tb.jpg" data-role="fitImage" data-format="fill">
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-
+    </form>
 
 
     <!-- FOOTER -->
     <div id="footer"></div>
 </div>
 
-<script type="text/javascript">
-$(".politicLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#politicLink").offset().top},
-        'slow');           
-});
-$(".historyLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#historyLink").offset().top},
-        'slow');           
-});
-$(".fictionLink").click(function(e) { 
-    $('html,body').animate({
-        scrollTop: $("#fictionLink").offset().top},
-        'slow');           
-});
-</script>
 
 </body>
 </html> 
